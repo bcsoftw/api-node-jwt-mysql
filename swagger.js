@@ -21,11 +21,12 @@ const options = {
         url:"http://www.apache.org/licenses/LICENSE-2.0.html"
       }
     },
-    servers: [ {
-      // url: new URL('https://api-node-jwt-mysql.vercel.app/'),
-        url: "https://api-node-jwt-mysql.vercel.app/",
-        description: "My API Documentation",
-    }],
+    // servers: [ {
+    //   // url: new URL('https://api-node-jwt-mysql.vercel.app/'),
+    //     url: "https://api-node-jwt-mysql.vercel.app/",
+    //     description: "My API Documentation",
+    // }],
+    servers: [],
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -45,5 +46,11 @@ const specs = swaggerJSDoc(options);
 
 module.exports = (app) => {
   // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-  app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
+  // app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+    // ✅ Sin CSS/JS externos - usa los embebidos
+    swaggerOptions: {
+      persistAuthorization: true,
+    }
+  }));
 };
