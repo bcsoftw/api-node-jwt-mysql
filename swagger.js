@@ -44,6 +44,6 @@ const options = {
 const specs = swaggerJSDoc(options);
 
 module.exports = (app) => {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-  // app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
+  // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+  app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
 };
