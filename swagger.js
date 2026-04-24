@@ -22,7 +22,8 @@ const options = {
       }
     },
     servers: [ {
-        url: new URL('https://api-node-jwt-mysql.vercel.app/'),
+      // url: new URL('https://api-node-jwt-mysql.vercel.app/'),
+        url: "https://api-node-jwt-mysql.vercel.app/",
         description: "My API Documentation",
     }],
     components: {
