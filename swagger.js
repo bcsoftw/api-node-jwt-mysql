@@ -25,7 +25,6 @@ const options = {
         url: new URL('https://api-node-jwt-mysql.vercel.app/'),
         description: "My API Documentation",
     }],
-    // servers: [ { url: 'http://localhost:3000/' }],
     components: {
       securitySchemes: {
         bearerAuth: {
