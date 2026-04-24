@@ -40,7 +40,7 @@ const sequelize = new Sequelize(
             max: 2,          // Bajo para serverless
             min: 0,
             acquire: 30000,  // 30 segundos para adquirir conexión
-            idle: 5000       // Cerrar conexiones inactivas rápido
+            idle: 10000       // Cerrar conexiones inactivas rápido
         },
         dialectOptions: {
             connectTimeout: 60000, // Tiempo para el handshake inicial
