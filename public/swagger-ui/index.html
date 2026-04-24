@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>API Docs</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+  <style>
+    html { box-sizing: border-box; overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
+    body { margin: 0; background: #fafafa; }
+    #swagger-ui { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <script src="./swagger-ui-bundle.js" charset="UTF-8"></script>
+  <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"></script>
+  <script>
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        url: '/api/swagger.json',
+        dom_id: '#swagger-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: "StandaloneLayout"
+      });
+      
+      window.ui = ui;
+    };
+  </script>
+</body>
+</html>
